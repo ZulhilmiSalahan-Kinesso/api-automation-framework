@@ -18,6 +18,8 @@ jobs:
           command: pytest --alluredir=allure-results
       - store_test_results:
           path: allure-results
+      - store_artifacts:
+          path: /home/circleci/project/test-pytest/allure-results
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:

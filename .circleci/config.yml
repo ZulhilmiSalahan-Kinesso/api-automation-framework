@@ -15,9 +15,9 @@ jobs:
       - python/install-packages
       - run:
           name: Run tests
-          command: pytest --alluredir=allure-results
+          command: pytest --alluredir=allure-results --junitxml=test-results/results.xml
       - store_test_results:
-          path: allure-results
+          path: test-results
       - store_artifacts:
           path: /home/circleci/project/test-pytest/allure-results
   deploy:
